@@ -3,7 +3,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres'
 })
 
-sequelize .authenticate()
+sequelize.authenticate()
     .then(() => console.log('connected to the database'))
     .catch(err => console.log(err));
 

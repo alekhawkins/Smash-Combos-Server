@@ -42,5 +42,11 @@ router.delete('/:id', validateSession, (req, res) => {
         error: err
     }))
 })
+//Get item by id
+router.put('/:id',validateSession, (req, res) => {
+    Moves.update(req.body, { where: { id: req.params.id }})
+      .then(move => res.status(200).json(move))
+      .catch(err => res.json({ error: err}))
+  })
 
 module.exports = router;
